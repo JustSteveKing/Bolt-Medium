@@ -1,0 +1,94 @@
+{% extends "_base.twig" %}
+
+{% block main %}
+
+	<main class="content" role="main">
+
+	<h5 class="index-headline featured"><span>Latest</span></h5>
+	{% setcontent latest = "entries/latest/2" allowpaging %}
+	<div class="container featured">
+	{% for entry in latest %}
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+				<div class="article-item">
+					<header class="post-header">
+						<h2 class="post-title" itemprop="name"><a href="{{ entry.link }}" itemprop="url">{{ entry.title }}</a></h2>
+					</header>
+					{% if entry.image is empty %}
+
+					{% else %}
+					<section class="post-media">
+						<img src="{{ image(entry.image) }}">
+					</section>
+					{% endif %}
+
+
+					{% if entry.video is empty %}
+
+					{% else %}
+					<section class="post-media">
+						<div class="videoWrapper">
+							<iframe src="{{ entry.video.url }}" width="1150" height="650" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+					</section>
+					{% endif %}
+
+					<section class="post-excerpt" itemprop="description">
+						{{ entry.excerpt(220) }}
+					</section>
+					<div class="post-meta">
+						<span>By <strong>{{ entry.user.displayname }}</strong> on </span>
+						<time datetime="{{ entry.datepublish|date("d:j:Y") }}">{{ entry.datepublish|date("d/m/Y") }}</time>
+						<span class="post-more" itemprop="name"><a href="{{ entry.link }}" itemprop="url">Read More</a></span>
+					</div>
+				</div>
+			</article>
+	{% endfor %}
+    </div>
+
+	{% setcontent records = "entries/latest/6" allowpaging %}
+
+	<h5 class="index-headline normal"><span>Regular</span></h5>
+
+		<div class="cf frame">
+			{% for record in records %}
+			<article class="post" itemscope itemtype="http://schema.org/BlogPosting" role="article">
+				<div class="article-item">
+					<header class="post-header">
+						<h2 class="post-title" itemprop="name"><a href="{{ record.link }}" itemprop="url">{{ record.title }}</a></h2>
+					</header>
+					{% if record.image is empty %}
+
+					{% else %}
+					<section class="post-media">
+						<img src="{{ image(record.image) }}">
+					</section>
+					{% endif %}
+
+
+					{% if record.video is empty %}
+
+					{% else %}
+					<section class="post-media">
+						<div class="videoWrapper">
+							<iframe src="{{ record.video.url }}" width="1150" height="650" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						</div>
+					</section>
+					{% endif %}
+
+					<section class="post-excerpt" itemprop="description">
+						{{ record.excerpt(220) }}
+					</section>
+					<div class="post-meta">
+						<span>By <strong>{{ record.user.displayname }}</strong> on </span>
+						<time datetime="{{ record.datepublish|date("d:j:Y") }}">{{ record.datepublish|date("d/m/Y") }}</time>
+						<span class="post-more" itemprop="name"><a href="{{ record.link }}" itemprop="url">Read More</a></span>
+					</div>
+				</div>
+			</article>
+			{% endfor %}
+		</div>
+		<nav class="pagination" role="navigation">
+		{{ pager('entries') }}
+		</nav>
+	</main>
+{% endblock %}

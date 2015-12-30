@@ -1,0 +1,29 @@
+{% extends "_base.listing.twig" %}
+
+{% block main %}
+
+    <main class="content" role="main">
+    	{% for record in records %}
+    		<article class="post">       
+        		<section class="post-content">
+          			<a name="topofpage"></a>
+          			<h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
+          			{{ record.body|excerpt(200) }}
+        		</section>
+      		</article>
+    	{% endfor %}
+      <nav class="pagination" role="navigation">
+        {{ pager() }}
+      </nav>
+    </main>
+    <div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url({{ image(theme.bg) }})">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">{{ app.config.get('general/sitename') }}</h1>
+        <h2 class="blog-description">{{ app.config.get('general/payoff') }}</h2>
+        <a href="{{ url('homepage') }}" class="btn">Back to Overview</a>
+      </div>
+    </div>
+{% endblock %}

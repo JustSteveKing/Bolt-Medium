@@ -1,0 +1,17 @@
+{% spaceless %}
+{% macro display_menu_item(item, loop) %}
+    {% from _self import display_menu_item %}
+        <a href="{{ item.link }}" title='{{ item.title|default('')|escape }}' class='{{ item.class|default('') }}'>
+            {{ item.label|default('-') }}
+        </a> 
+        {% if loop.last %}{% else %}&bull;{% endif %}
+{% endmacro %}
+
+{% from _self import display_menu_item %}
+
+{% for item in menu %}
+    {% if item.label is defined %}
+        {{ display_menu_item(item, loop) }}
+    {% endif %}
+{% endfor %}
+{% endspaceless %}

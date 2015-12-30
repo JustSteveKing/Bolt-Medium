@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>
+    {% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
+            {{ app.config.get('general/sitename') }}
+        {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
+  </title>
+
+  {% include "partials/_seo.twig" %}
+
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,400italic,700,700italic,300,300italic' rel='stylesheet' type='text/css'>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" media="screen" href="{{ paths.theme }}assets/css/main.css" />
+  <link rel="stylesheet" media="print" href="{{ paths.theme }}assets/css/print.css" />
+  <link rel="dns-prefetch" href="//google-analytics.com/">
+</head>
+
+
+  <body itemscope itemtype="http://schema.org/Article">
+
+    {% block main %}{% endblock %}
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="{{ paths.theme }}assets/js/jquery.fitvids.js"></script>
+    <script src="{{ paths.theme }}assets/js/index.js"></script>
+    <script>
+        (function (b, o, i, l, e, r) {
+            b.GoogleAnalyticsObject = l;
+            b[l] || (b[l] =
+                function () {
+                    (b[l].q = b[l].q || []).push(arguments)
+                });
+            b[l].l = +new Date;
+            e = o.createElement(i);
+            r = o.getElementsByTagName(i)[0];
+            e.src = '//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e, r)
+        }(window, document, 'script', 'ga'));
+        ga('create', 'UA-XXXXX-X', 'auto');
+        ga('send', 'pageview');
+    </script>
+  </body>
+</html>

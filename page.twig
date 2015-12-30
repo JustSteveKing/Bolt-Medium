@@ -1,0 +1,36 @@
+{% extends "_base.listing.twig" %}
+
+{% block main %}
+
+	<main class="content" role="main">
+      <article class="post">
+        <div class="noarticleimage">
+          <div class="post-meta">
+            <h1 class="post-title">{{ record.title }}</h1>
+            <div class="cf post-meta-text">
+              <div class="author-image" style="background-image: url({{ image(theme.avatar) }})">Blog Logo</div>
+              <h4 class="author-name" itemprop="author" itemscope itemtype="http://schema.org/Person">{{ record.user.displayname }}</h4>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        <section class="post-content">
+          <a name="topofpage"></a>
+          {{ record.body }}
+        </section>
+      </article>
+    </main>
+
+	<div class="bottom-closer">
+      <div class="background-closer-image"  style="background-image: url({{ image(theme.bg) }})">
+        Image
+      </div>
+      <div class="inner">
+        <h1 class="blog-title">{{ app.config.get('general/sitename') }}</h1>
+        <h2 class="blog-description">{{ app.config.get('general/payoff') }}</h2>
+        <a href="{{ url('homepage') }}" class="btn">Back to Overview</a>
+      </div>
+    </div>
+
+{% endblock %}

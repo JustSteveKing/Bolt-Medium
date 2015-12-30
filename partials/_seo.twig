@@ -1,0 +1,15 @@
+<meta name="description" content="Things that came in my mind..." />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="{{ theme.twitter_handle }}" />
+  <meta name="twitter:title" content="{{ record.title }}" />
+  <meta name="twitter:image" content="{{ url('homepage') }}{{ theme.bg }}" />
+  <meta name="twitter:description"  content="{{ record.body|excerpt(200) }}" />
+  
+  <meta property="og:site_name" content="{{ app.config.get('general/sitename') }}" />
+  <meta property="og:title" content="{{ record.title }}"/>
+  <meta property="og:description" content="{{ record.body|excerpt(200) }}" />
+  <meta property="og:image" content="{{ url('homepage') }}{{ theme.bg }}" />
+  <meta property="og:url" content="{{ app.request.uri }}" >
+  <meta property="og:type" content="blog" />
+  <meta property="article:published_time" content="{{ record.datepublish }}">
