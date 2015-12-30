@@ -1,0 +1,25 @@
+{
+	"name": "JustSteveKing/Bolt-Medium",
+	"description": "A simple Medium style theme for Bolt. This theme is intended to be used as a blogging theme, however it can be used for pages.",
+	"type": "bolt-theme",
+	"keywords": ["theme", "medium", "responsive", "clean", "blogging"],
+	"require": {
+		"bolt/bolt": ">=2.0.0,<3.0.0"
+	},
+	"license": "CCA (Creative Commons Attribution)",
+	"authors": [
+		{
+			"name": "Steve King",
+			"email": "steve@houseofcodes.co"
+		}
+	],
+	"extra": {
+		"bolt-screenshots": [
+			"screenshots/homepage.png",
+			"screenshots/listingpage.png",
+			"screenshots/page.png",
+			"screenshots/post.png",
+			"screenshots/post.video.png"
+		]
+	}
+}
