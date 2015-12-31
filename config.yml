@@ -1,7 +1,9 @@
 logo: "layout/bolt.png"
 bg: "layout/default_bg.jpg"
-twitter: "https://www.twitter.com/JustSteveKing"
-github: "https://www.github.com/JustSteveKing"
+twitter: "https://www.twitter.com/BoltCM"
+github: "https://www.github.com/bolt/bolt"
 avatar: "layout/avatar.png"
 
-twitter_handle: "@JustSteveKing"
+twitter_handle: "@BoltCM"
+
+show_email: true
