@@ -4,15 +4,17 @@
 		<section class="copyright">All content copyright {{ app.config.get('general/sitename') }} &copy; {{ "now"|date("Y") }} &bull; All rights reserved.</section>
 		<section class="poweredby">Powered by <a href="http://www.bolt.cm/"> Bolt</a></section>
 		<div class="custom-links">
+			{% if theme.twitter is defined %}
 			<a class="icon-twitter" target="_blank" href="{{ theme.twitter }}">
         		<i class="fa fa-twitter"></i>
 			</a>
-	
+			{% endif %}
 			&nbsp;&nbsp;·&nbsp;&nbsp;
-
+			{% if theme.github is defined %}
 			<a class="icon-github" target="_blank" href="{{ theme.github }}">
 				<i class="fa fa-github"></i>
 			</a>
+			{% endif %}
 		</div>
     </div>
 </footer>
