@@ -50,7 +50,9 @@
             <section class="author">
               <div class="author-image" style="background-image: url({{ image(theme.avatar) }})">Blog Logo</div>
               <h4>{{ record.user.displayname }}</h4>
+              {% if theme.show_email %}
               <p class="bio"><a href="mailto:{{ record.user.email }}">{{ record.user.email }}</a></p>
+              {% endif %}
               <hr>
               <p class="published">Published <time datetime="{{ record.datepublish }}">{{ record.datepublish|date("d/m/Y") }}</time></p>
             </section>
