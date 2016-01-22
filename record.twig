@@ -2,7 +2,7 @@
 
 {% block main %}
 
-	<main class="content" role="main">
+	<main itemprop="articleBody" class="content" role="main">
       <article class="post">
         <div class="article-image">
           <div class="post-image-image" style="background-image: url({% if record.image is empty %}{{ image(theme.bg) }}{% else %}{{ image(record.image) }}{% endif %})">
