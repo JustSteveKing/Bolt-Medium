@@ -1,9 +1,12 @@
 
-<header class="blog-header">
-    <a class="blog-logo" href="{{ url('homepage') }}" style="background-image: url({{ image(theme.logo) }})"></a>
-    <h1 class="blog-title">{{ app.config.get('general/sitename') }}</h1>
+<header class="blog-header" itemscope itemtype="https://schema.org/Organization">
+    <a itemprop="url" class="blog-logo" href="{{ url('homepage') }}" style="background-image: url({{ image(theme.logo) }})"></a>
+    <meta itemprop="logo" content="{{ image.theme.logo }}" />
+    <h1 itemprop="name" class="blog-title">{{ app.config.get('general/sitename') }}</h1>
     <h2 class="blog-description">{{ app.config.get('general/payoff') }}</h2>
     <div class="custom-links">
-      {{ menu() }}
+    	<nav id="sitenav" itemscope itemtype="https://schema.org/SiteNavigationElement" role="navigation">
+			{{ menu() }}
+		</nav>
     </div>
 </header>
