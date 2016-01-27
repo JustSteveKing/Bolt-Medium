@@ -1,0 +1,10 @@
+logo: "layout/bolt.png"
+bg: "layout/default_bg.jpg"
+twitter: "https://www.twitter.com/BoltCM"
+github: "https://www.github.com/bolt/bolt"
+avatar: "layout/avatar.png"
+
+twitter_handle: "@BoltCM"
+
+show_email: true
+analytics: UA-XXXXXXXX-X
