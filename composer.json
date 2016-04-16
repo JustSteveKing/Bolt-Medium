@@ -4,7 +4,7 @@
 	"type": "bolt-theme",
 	"keywords": ["theme", "medium", "responsive", "clean", "blogging"],
 	"require": {
-		"bolt/bolt": ">=2.0.0,<3.0.0"
+		"bolt/bolt": "^3.0"
 	},
 	"license": "CCA (Creative Commons Attribution)",
 	"authors": [
