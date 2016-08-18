@@ -15,6 +15,7 @@
 	],
 	"extra": {
 		"bolt-screenshots": [
+			"screenshots/teaser.png",
 			"screenshots/homepage.png",
 			"screenshots/listingpage.png",
 			"screenshots/page.png",
