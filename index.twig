@@ -13,18 +13,13 @@
 					<header class="post-header">
 						<h2 class="post-title" itemprop="name"><a href="{{ entry.link }}" itemprop="url">{{ entry.title }}</a></h2>
 					</header>
-					{% if entry.image is empty %}
-
-					{% else %}
+					{% if entry.image is not empty %}
 					<section class="post-media">
 						<img src="{{ image(entry.image) }}">
 					</section>
 					{% endif %}
 
-
-					{% if entry.video is empty %}
-
-					{% else %}
+					{% if entry.video is not empty %}
 					<section class="post-media">
 						<div class="videoWrapper">
 							<iframe src="{{ entry.video.url }}" width="1150" height="650" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -56,18 +51,14 @@
 					<header class="post-header">
 						<h2 class="post-title" itemprop="name"><a href="{{ record.link }}" itemprop="url">{{ record.title }}</a></h2>
 					</header>
-					{% if record.image is empty %}
-
-					{% else %}
+					{% if record.image is not empty %}
 					<section class="post-media">
 						<img src="{{ image(record.image) }}">
 					</section>
 					{% endif %}
 
 
-					{% if record.video is empty %}
-
-					{% else %}
+					{% if record.video is not empty %}
 					<section class="post-media">
 						<div class="videoWrapper">
 							<iframe src="{{ record.video.url }}" width="1150" height="650" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
